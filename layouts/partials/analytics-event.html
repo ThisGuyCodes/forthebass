@@ -1,0 +1,28 @@
+<amp-analytics type="googleanalytics" id="analytics-event-{{ .Name }}">
+  <script type="application/json">
+  {
+    "vars": {
+      "account": "{{ .G.Site.GoogleAnalytics }}"
+    },
+    "triggers": {
+      "trackEvent{{ .Name }}": {
+        "on": "{{ .On }}",
+        {{ if isset . "Selector" }}
+        "selector": "{{ .Selector }}",
+        {{ end }}
+        "request": "event",
+        "vars": {
+          {{ if isset . "Label" }}
+          "eventLabel": "{{ .Label }}",
+          {{ end }}
+          {{ if isset . "Value" }}
+          "eventValue": "{{ .Value }}",
+          {{ end }}
+          "eventCatagory": "{{ .Category }}",
+          "eventAction": "{{ .Action }}"
+        }
+      }
+    }
+  }
+  </script>
+</script>

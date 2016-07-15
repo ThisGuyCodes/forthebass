@@ -1,0 +1,16 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    {{ partial "header" . }}
+    {{ partial "amp-cdn" (dict "Name" "sidebar" "Version" "0.1") }}
+    {{ partial "amp-cdn" (dict "Name" "fit-text" "Version" "0.1") }}
+  </head>
+  <body>
+    <amp-sidebar id='sidebar' layout='nodisplay' side='left'>
+      <h3>Sidebar!</h3>
+      <button on='tap:sidebar.close'>Close</button>
+    </amp-sidebar>
+    <button class="hamburger" on='tap:sidebar.toggle'></button>
+    {{ partial "analytics-pageview" . }}
+  </body>
+</html>

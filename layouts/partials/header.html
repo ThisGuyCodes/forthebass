@@ -1,0 +1,7 @@
+<meta charset="utf-8">
+<link rel="canonical" href="{{ .Site.BaseURL }}/{{ .URL }}">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+{{ partial "amp-boiler" . }}
+{{ partial "amp-cdn" (dict "Name" "analytics" "Version" "0.1") }}
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+{{ partial "basic-style" . }}
